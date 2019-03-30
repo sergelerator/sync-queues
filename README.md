@@ -1,13 +1,13 @@
-# sync-queue
+# sync-queues
 
 Utility for synchronizing async code.
 
 ## Usage
 
-sync-queue has a very small surface API, you create synchronized queues and run tasks on it:
+sync-queues has a very small surface API, you create synchronized queues and run tasks on it:
 
 ```typescript
-import syncQueue from "sync-queue";
+import syncQueue from "sync-queues";
 
 const wait = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 
