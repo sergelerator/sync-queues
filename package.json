@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Utility for synchronizing async code",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/sergelerator/requires-lock",
   "author": "Sergio Morales",
   "license": "MIT",
