@@ -1,5 +1,5 @@
 {
-  "name": "requires-lock",
+  "name": "sync-queue",
   "version": "1.0.0",
   "description": "Utility for synchronizing async code",
   "main": "index.js",
