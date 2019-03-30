@@ -1,5 +1,7 @@
 # sync-queues
 
+[![Build Status](https://travis-ci.org/sergelerator/sync-queues.svg?branch=master)](https://travis-ci.org/sergelerator/sync-queues)
+
 Utility for synchronizing async code.
 
 ## Usage
