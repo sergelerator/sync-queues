@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
-  "repository": "https://github.com/sergelerator/requires-lock",
+  "repository": "https://github.com/sergelerator/sync-queues",
   "author": "Sergio Morales",
   "license": "MIT",
   "scripts": {
