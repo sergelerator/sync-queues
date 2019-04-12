@@ -18,7 +18,7 @@ const syncQueue = <T>(taskTimeout: number = 0) => {
   let timeoutId: NodeJS.Timeout | null = null;
   if (taskTimeout < 0) { throw taskTimeoutValueError; }
 
-  const poll = () => {
+  const dispatchNextTask = () => {
     if (!running) {
       const release = queue.shift();
       if (release) {
@@ -31,7 +31,7 @@ const syncQueue = <T>(taskTimeout: number = 0) => {
   const run = async (task: () => T): Promise<T> => {
     const turn = getTurn();
     queue.push(turn.releaser);
-    if (queue.length > 0) { poll(); }
+    dispatchNextTask();
     await turn.promise;
     try {
       const timeout: Promise<T> = new Promise((resolve, reject) => {
@@ -47,7 +47,7 @@ const syncQueue = <T>(taskTimeout: number = 0) => {
         clearTimeout(timeoutId);
         timeoutId = null;
       }
-      poll();
+      dispatchNextTask();
     }
   };
 
