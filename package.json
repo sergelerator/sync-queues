@@ -1,6 +1,6 @@
 {
   "name": "sync-queues",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility for synchronizing async code",
   "main": "lib/index.js",
   "module": "lib/index.js",
