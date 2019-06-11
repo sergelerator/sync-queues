@@ -15,7 +15,7 @@ const getTurn = () => {
 const syncQueue = <T>(taskTimeout: number = 0) => {
   const queue: Array<() => void> = [];
   let running = false;
-  let timeoutId: NodeJS.Timeout | null = null;
+  let timeoutId: ReturnType<typeof setTimeout> | null = null;
   if (taskTimeout < 0) { throw taskTimeoutValueError; }
 
   const dispatchNextTask = () => {
@@ -39,7 +39,7 @@ const syncQueue = <T>(taskTimeout: number = 0) => {
           timeoutId = setTimeout(() => reject(timeoutError), taskTimeout);
         }
       });
-      const result = await Promise.race([task(), timeout]);;
+      const result = await Promise.race<T>([task(), timeout]);
       return result;
     } finally {
       running = false;
